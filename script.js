@@ -1,20 +1,9 @@
-// Solicitar permisos de notificación y enviar una notificación
-document.addEventListener("DOMContentLoaded", () => {
-    if (Notification.permission !== "granted") {
-        Notification.requestPermission();
-    } else {
-        sendNotification();
-    }
-});
-
-// Función para enviar la notificación
-function sendNotification() {
-    const lastUpdate = "Última actualización: Se han recibido 3/5 videos.";
-    
-    if (Notification.permission === "granted") {
-        new Notification("Brest", {
-            body: lastUpdate,
-            icon: "https://media.tenor.com/IuABkwIwrUUAAAAM/loading-yellow.gif", // Aquí puedes cambiar la URL del ícono
-        });
-    }
-}
+    document.getElementById('submit').addEventListener('click', function() {
+      const password = document.getElementById('password').value;
+      const content = document.getElementById('content');
+      if (password === 'BR3ST24') {
+        content.classList.remove('hidden');
+      } else {
+        alert('Incorrect password. Please try again.');
+      }
+    });
